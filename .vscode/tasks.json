@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "gcc 컴파일 및 실행",
+            "command": "C:\\MinGW\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-fexec-charset=CP949",
+                "${file}",
+                "-o",
+                "C:\\Workstation\\Study\\c\\.vscode\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Workstation\\Study\\c\\.vscode",
+                "env": {
+                    "PATH": "${env:PATH};C:\\MinGW\\bin"
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "컴파일러: C:\\MinGW\\bin\\gcc.exe",
+            "dependsOn": ["실행"]
+        },
+        {
+            "type": "shell",
+            "label": "실행",
+            "command": "C:\\Workstation\\Study\\c\\.vscode\\${fileBasenameNoExtension}.exe",
+            "problemMatcher": [],
+            "options": {
+                "cwd": "C:\\Workstation\\Study\\c\\.vscode",
+                "env": {
+                    "PATH": "${env:PATH};C:\\MinGW\\bin"
+                }
+            }
+        }
+    ]
+}
